@@ -1,0 +1,65 @@
+<%= form_for(recipe) do |f| %>
+  <% if recipe.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
+
+      <ul>
+      <% recipe.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="field ">
+    <%= f.label :料理名 %>
+    <%= f.text_field :title,:size => "60x1" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :料理の概要 %>
+    <%= f.text_area :summary, :size => "60x5" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :材料 %>
+    <%= f.text_area :material, :size => "60x8" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :作り方 %>
+    <%= f.text_area :howtomake, :size => "60x10" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :ジャンル %>
+    <%= f.text_field :genre %>
+  </div>
+
+  <div class="field">
+    <%= f.label :作った経験 %>
+    <%= f.text_field :madeit %>
+  </div>
+
+  <div class="field">
+    <%= f.label :画像 %>
+    <%= f.file_field :image %>
+  </div>
+
+  <div class="field" >
+    <%= f.label :作成者のID %>
+    <% if recipe.author == 0 %>
+      <!-- デフォルト値の場合は自分のidを入れる --> 
+      <% recipe.author = @current_user[:id] %>
+      <%= f.text_field :author  %>    
+    <% else %>
+      <%= f.text_field :author %>
+    <% end %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>

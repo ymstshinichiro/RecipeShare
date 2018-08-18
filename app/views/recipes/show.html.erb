@@ -1,0 +1,33 @@
+<div class="content">
+  <!-- <strong>Title:</strong> -->
+  <h2><%= @recipe.title %></h2>
+
+  <!-- summary -->
+  <%= simple_format(@recipe.summary) %>
+  
+  <!-- image -->
+  <div class="photo">
+    <% if @recipe.image? %>
+  　　<%= image_tag @recipe.image.url %>
+  　<% else %>
+  　　<%= image_tag 'noimage.gif' %>
+  　<% end %>
+  </div>
+
+  <h3>材料</h3>
+  <%= simple_format(@recipe.material) %>
+
+  <h3>つくりかた</h3>
+  <%= simple_format(@recipe.howtomake) %>
+ 
+  <br>
+  <br>
+  <strong>ジャンル</strong> <%= @recipe.genre %>
+  <br>
+  <strong>作成経験</strong> <%= @recipe.madeit %>
+  <br>
+  <br>
+
+</div>
+<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
+<%= link_to 'Back', recipes_path %>

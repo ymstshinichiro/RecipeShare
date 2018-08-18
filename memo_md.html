@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>memo_md.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+</head>
+<body>
+<h1 id="%E9%96%8B%E7%99%BA%E3%83%A1%E3%83%A2memo">開発メモmemo</h1>
+<h2 id="%E4%BD%9C%E3%82%8B%E3%82%82%E3%81%AE">作るもの</h2>
+<ul>
+<li>
+<p>夫婦間レシピ共有アプリ</p>
+<ul>
+<li>「今日晩御飯どうする？」を解決する</li>
+</ul>
+</li>
+<li>
+<p>夫は、妻が何を作れるのかをきちんと把握していないため、何がいいか聞かれても答えられない</p>
+</li>
+<li>
+<p>外食の場合には、一緒に食べたご飯を共有しておくとよい</p>
+<ul>
+<li>同様に、まだ行ったことのないお店も共有しておくと便利(今日ここいってみようか？的な)</li>
+</ul>
+</li>
+<li>
+<p>テレビで紹介されたレシピのメモなど</p>
+<ul>
+<li>旬の野菜、特売の野菜など</li>
+</ul>
+</li>
+</ul>
+<h2 id="%E5%BF%85%E8%A6%81%E3%81%AA%E3%82%82%E3%81%AE">必要なもの</h2>
+<ul>
+<li>
+<p>ログイン</p>
+<ul>
+<li>
+<p>ユーザー(<strong>user</strong>)</p>
+<ul>
+<li>名前(<strong>name</strong>) ※必須だがかぶってもよい</li>
+<li>メールアドレス(<strong>email</strong>) ※必須、ユニーク</li>
+<li>パスワード(<strong>name</strong>) ※5文字以上。半角英数のみ</li>
+<li>グループ(<strong>name</strong>)  ※null許容。後から追加できる</li>
+</ul>
+</li>
+<li>
+<p>グループ</p>
+</li>
+</ul>
+</li>
+<li>
+<p>メニュー一覧 (<strong>main_menu</strong>)</p>
+<ul>
+<li>
+<p>レシピリスト(<strong>recipe</strong>)</p>
+<ul>
+<li>一覧
+<ul>
+<li>CRUD
+<ul>
+<li>構成要素は下記の通り</li>
+<li>タイトル (<strong>title</strong>)</li>
+<li>お料理のサマリ(<strong>text</strong>)</li>
+<li>材料(<strong>material</strong>)</li>
+<li>作り方(<strong>howToMake</strong>)</li>
+<li>ジャンル(<strong>genre</strong>)</li>
+<li>作った（ある/なし）(<strong>madeIt</strong>)</li>
+<li>編集日時(<strong>lastUpdate</strong>)</li>
+<li>画像（<strong>image</strong>)</li>
+<li>グループ(<strong>group</strong>)※データが共有されるグループ</li>
+<li>作成者(<strong>author</strong>)※作成者とグループユーザーのみ閲覧可能
+<br></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>お店リスト(<strong>shop</strong>)</p>
+<ul>
+<li>一覧
+<ul>
+<li>CRUD
+<ul>
+<li>構成要素は下記の通り</li>
+<li>店名</li>
+<li>気になるメニュー</li>
+<li>住所 (googlemapを引っ張ってくる)</li>
+<li>定休日</li>
+<li>ジャンル</li>
+<li>行った（ある/なし）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>メモ(memo)</p>
+<ul>
+<li>一覧
+<ul>
+<li>CRUD
+<ul>
+<li>構成要素は下記の通り</li>
+<li>タイトル</li>
+<li>テキスト</li>
+<li>タグ</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<style>
+html {
+	background-color: #f3f3f3;
+	color: #656565;
+}
+body {
+	font-family: "Minion Pro","Chaparral Pro",Georgia,serif;
+	margin-left:auto;
+	margin-right:auto;
+	padding: 2em;
+	border: 0;
+	font-size: 1em;
+	line-height: 1.7em;
+	// font-family: "Source Sans Pro","Helvetica Neue",Helvetica,sans-serif;
+	max-width: 35em;
+}
+a {
+	padding:0 0.3em 0.1em 0.3em;
+    color: #656565;
+	background: #f7f7f7;
+    text-decoration:none;
+    border: 1px solid #d4d4d4;
+	border-radius: 4px;
+}
+a:hover {
+	padding:0 0.3em 0.1em 0.3em;
+    text-decoration: none;
+    background:-webkit-gradient(linear, 80% 20%, 80% 100%, from(#315983), to(#224C78));
+    color: #f7ffff;
+    border-top: 1px solid rgb(69,105,143);
+    border-bottom: 1px solid rgb(47,76,105);
+    border-right: 1px solid rgb(47,76,105);
+    border-left: 1px solid rgb(47,76,105);
+	border-radius: 4px;
+	box-shadow: 0px 0px 0px 1px rgb(47,76,105);;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	text-align: left;
+	color: rgb(12,139,186);	
+	line-height: 1;
+	font-weight: 600;
+}
+
+h1 {
+	text-align: center;
+	font-size: 2em;
+}
+h2 {
+	font-size: 1.6em;
+}
+h3 {
+	font-size: 1.4em;
+}
+h4 {
+	font-size: 1.2em;
+}
+h5 {
+	font-size: 1.1em;
+}
+h6 {
+	font-style: italic;
+	font-size: 1em;
+}
+
+ol, ul {
+	margin-left: -15px;
+	margin-right: 25px;
+}
+
+ul li {
+     list-style: none;
+   }
+
+ul li:before {
+	content:'\2010';
+	display: block;
+	position: relative;
+	max-width: 0;
+	max-height: 0;
+	left: -.8em;
+	top: -.1em;
+	color: rgb(12,139,186);
+	font-size:1.2em;
+}
+
+
+   
+li {
+	font-size: .9em;
+}
+
+li p {
+	-webkit-margin-before: 0;
+	-webkit-margin-after: 0;
+}
+
+.footnote {
+	font-size: 50%;
+	vertical-align: super;
+}
+div.footnotes {
+	font-size: 80%;
+}
+pre, code {
+	white-space: pre-wrap;
+}
+blockquote {
+	background:rgb(230,230,230);
+	display: block;
+	font-style:italic;
+	font-weight:200;
+	color: rgb(12,139,186);	
+	padding:0.2em 2em 0.2em 2em;
+	-webkit-margin-before: 1em;
+	-webkit-margin-after: 1em;
+	-webkit-margin-start: 0;
+	-webkit-margin-end: 0;
+}
+
+code {
+	font-family: Inconsolata,"Courier Prime",mono;
+	font-size:80%;
+	padding: 2px;
+	color: rgb(20,126,73);
+	background: rgb(224,232,228);
+}
+
+/*
+   This document has been created with Marked.app <http://marked2app.com>
+   Please leave this notice in place, along with any additional credits below.
+   ---------------------------------------------------------------
+   Title: Ulysses Freestraction Light
+   Author: Jonathan Poritsky <http://candlerblog.com>
+   Description: Based on the Freestraction color scheme used in Ulysses III <http://www.ulyssesapp.com>.
+   For more information read the introductory post: http://candlerblog.com/2013/04/11/ulysses-iii-and-marked/ 
+*/
+
+</style>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+@import "bootstrap";
+@import "scaffolds";
+
+nav {
+    margin-bottom: 20px;
+}  
+
+.recipeTable {
+  width: inherit;
+  border: 1px #E3E3E3 solid;
+  border-collapse: collapse;
+  border-spacing: 0;
+    
+  th {
+    padding: 5px;
+    border: #E3E3E3 solid;
+    border-width: 0 0 1px 1px;
+    background: #F5F5F5;
+    font-weight: bold;
+    line-height: 120%;
+    text-align: center;
+  }
+  td {
+    padding: 5px;
+    border: 1px #E3E3E3 solid;
+    border-width: 0 0 1px 1px;
+    text-align: center;
+    //height: 150px;
+  }
+}
+
+.content{
+
+ p {
+    margin: 10px;
+  }
+
+ h2 {
+    text-align: left;
+    font-weight: bold;
+    font-size: 28px;
+    color: #008080;
+  }
+
+  h3 {
+    text-align: left;
+    font-weight: bold;
+    font-size: 18px;
+    color: #DC143C;
+    margin-top: 20px;
+  }
+}
+
+.btnoffset {
+  margin-bottom: 20px ;
+  margin-left: 30px ;
+  
+}
+
+
